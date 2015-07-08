@@ -1,0 +1,27 @@
+{
+  "name": "alariva/tidiochat",
+  "description": "A minimal package for integrating TidioChat.com to your webapp",
+  "keywords": [],
+  "homepage": "http://xbooking.com.ar/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ariel Vallese",
+      "email": "alariva@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/config": "~5.0",
+    "illuminate/support": "~5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "tidiochat\\": "src\\"
+    }
+  },
+  "minimum-stability": "dev"
+}
