@@ -20,23 +20,23 @@ Then register TidioChat's service provider with Laravel:
 'alariva\tidiochat\TidioChatServiceProvider',
 ```
 
-Optionally, you can add the following alias to your `aliases` 
+Add the following alias to your `aliases` 
 array in your `config/app.php` file. Only if you don't want to use the blade extension.
 
 ```php
-'TidioChat' => 'alariva\tidiochat\TidioChat',
+'TidioChat' => 'alariva\tidiochat\TidioChatFacade',
 ```
 
 ## Configuration
 
 You will need to set your your **key** in the config file.
 
-## Including the Live Chat widget
+## Usage
 
-Call the blade directive ``@tidiochat`` before your closing ``</body>`` tag.
+To include the Live Chat widget use this code before your closing ``</body>`` tag.
 
 ```php
-@tidiochat
+{!! TidioChat::js() !!}
 ```
 
 ## Contributing

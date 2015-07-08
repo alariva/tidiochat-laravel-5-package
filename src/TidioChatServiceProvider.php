@@ -2,7 +2,7 @@
 
 namespace alariva\tidiochat;
 
-use Blade;
+use alariva\tidiochat\TidioChat;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 class TidioChatServiceProvider extends LaravelServiceProvider
@@ -22,10 +22,6 @@ class TidioChatServiceProvider extends LaravelServiceProvider
     public function boot()
     {
         $this->handleConfigs();
-        // $this->handleMigrations();
-        // $this->handleViews();
-        // $this->handleTranslations();
-        // $this->handleRoutes();
     }
 
     /**
@@ -35,15 +31,13 @@ class TidioChatServiceProvider extends LaravelServiceProvider
      */
     public function register()
     {
-        $this->app->bind(
-            'TidioChat::widget',
-            function () {
-                return new TidioChat;
-            }
-        );
-        
-        Blade::directive('tidiochat', function() {
-            return "<?php echo TidioChat::render(); ?>";
+        $this->registerTidioChat();
+    }
+
+    protected function registerTidioChat()
+    {
+        $this->app->bindShared('tidiochat', function ($app) {
+            return new TidioChat();
         });
     }
 
@@ -64,27 +58,5 @@ class TidioChatServiceProvider extends LaravelServiceProvider
         $this->publishes([$configPath => config_path('TidioChat.php')]);
 
         $this->mergeConfigFrom($configPath, 'TidioChat');
-    }
-
-    private function handleTranslations()
-    {
-        $this->loadTranslationsFrom('TidioChat', __DIR__.'/../lang');
-    }
-
-    private function handleViews()
-    {
-        $this->loadViewsFrom('TidioChat', __DIR__.'/../views');
-
-        $this->publishes([__DIR__.'/../views' => base_path('resources/views/vendor/TidioChat')]);
-    }
-
-    private function handleMigrations()
-    {
-        $this->publishes([__DIR__ . '/../migrations' => base_path('database/migrations')]);
-    }
-
-    private function handleRoutes()
-    {
-        include __DIR__.'/../routes.php';
     }
 }
