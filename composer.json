@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "tidiochat\\": "src\\"
+      "alariva\\tidiochat\\": "src\\"
     }
   },
   "minimum-stability": "dev"
