@@ -9,8 +9,8 @@ This package allows you to easily integrate it to your web application with a si
 Add the following to your `composer.json` file :
 
 ```json
-"require": {
-    "alariva/tidiochat": "~1",
+"require-dev": {
+    "alariva/tidiochat": "^1.0"
 },
 ```
 
