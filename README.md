@@ -2,7 +2,7 @@
 
 TidioChat.com is an online service that allows you add a Live Chat window in your website to interact with your visitors.
 
-This package allows you to easily integrate it to your web application with a simple blade extension.
+This package allows you to easily integrate it to your web application with a simple call.
 
 ## Installation
 
@@ -21,7 +21,7 @@ Then register TidioChat's service provider with Laravel:
 ```
 
 Add the following alias to your `aliases` 
-array in your `config/app.php` file. Only if you don't want to use the blade extension.
+array in your `config/app.php` file.
 
 ```php
 'TidioChat' => 'alariva\tidiochat\TidioChatFacade',
