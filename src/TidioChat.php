@@ -6,7 +6,7 @@ class TidioChat
 {
     public static function js()
     {
-        $src = $this->src();
+        $src = self::src();
         return "<script src=\"$src\"></script>";
     }
 
