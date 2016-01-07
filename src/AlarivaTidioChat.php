@@ -1,17 +1,18 @@
 <?php
 
-namespace alariva\tidiochat;
+namespace Alariva\Tidiochat;
 
-class TidioChat
+class AlarivaTidioChat
 {
     public static function js()
     {
         $src = self::src();
+
         return "<script src=\"$src\"></script>";
     }
 
     public static function src()
     {
-        return '//code.tidio.co/'.\Config::get('TidioChat.key').'.js';
+        return '//code.tidio.co/'.\Config::get('tidiochat.key').'.js';
     }
 }

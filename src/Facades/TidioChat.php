@@ -1,10 +1,10 @@
 <?php
 
-namespace alariva\tidiochat;
+namespace Alariva\Tidiochat\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class TidioChatFacade extends Facade
+class TidioChat extends Facade
 {
     protected static function getFacadeAccessor()
     {

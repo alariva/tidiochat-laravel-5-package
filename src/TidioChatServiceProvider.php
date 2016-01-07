@@ -1,8 +1,7 @@
 <?php
 
-namespace alariva\tidiochat;
+namespace Alariva\Tidiochat;
 
-use alariva\tidiochat\TidioChat;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 class TidioChatServiceProvider extends LaravelServiceProvider
@@ -36,8 +35,8 @@ class TidioChatServiceProvider extends LaravelServiceProvider
 
     protected function registerTidioChat()
     {
-        $this->app->bindShared('tidiochat', function ($app) {
-            return new TidioChat();
+        $this->app->singleton('tidiochat', function ($app) {
+            return new AlarivaTidioChat();
         });
     }
 
@@ -53,10 +52,10 @@ class TidioChatServiceProvider extends LaravelServiceProvider
 
     private function handleConfigs()
     {
-        $configPath = __DIR__ . '/../config/TidioChat.php';
+        $configPath = __DIR__.'/../config/tidiochat.php';
 
-        $this->publishes([$configPath => config_path('TidioChat.php')]);
+        $this->publishes([$configPath => config_path('tidiochat.php')]);
 
-        $this->mergeConfigFrom($configPath, 'TidioChat');
+        $this->mergeConfigFrom($configPath, 'tidiochat');
     }
 }
