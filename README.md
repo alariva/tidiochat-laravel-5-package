@@ -19,7 +19,7 @@ To include the Live Chat widget use this code before your closing ``</body>`` ta
 Add the following to your `composer.json` file :
 
 ```json
-"require-dev": {
+"require": {
     "alariva/tidiochat": "^2.0"
 },
 ```
