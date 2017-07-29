@@ -13,6 +13,8 @@ class AlarivaTidioChat
 
     public static function src()
     {
-        return '//code.tidio.co/'.\Config::get('tidiochat.key').'.js';
+        $key = \Config::get('tidiochat.key');
+
+        return '//code.tidio.co/'.$key.'.js';
     }
 }
