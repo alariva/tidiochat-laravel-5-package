@@ -27,7 +27,10 @@
     "laravel": {
       "providers": [
         "Alariva\\Tidiochat\\TidioChatServiceProvider"
-      ]
+      ],
+      "aliases": {
+          "TidioChat": "Alariva\\Tidiochat\\Facades\\TidioChat"
+      }
     }
   },
   "minimum-stability": "dev"
