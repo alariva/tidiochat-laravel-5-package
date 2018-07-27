@@ -23,5 +23,12 @@
       "Alariva\\Tidiochat\\": "src\\"
     }
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Alariva\\Tidiochat\\TidioChatServiceProvider"
+      ]
+    }
+  },
   "minimum-stability": "dev"
 }
