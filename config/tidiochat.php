@@ -11,5 +11,5 @@
  */
 
 return [
-    'key' => '',
+    'key' => env('TIDIOCHAT_KEY', ''),
 ];
