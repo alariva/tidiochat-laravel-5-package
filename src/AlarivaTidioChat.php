@@ -8,7 +8,7 @@ class AlarivaTidioChat
     {
         $src = self::src();
 
-        $defer = $useDefer ? ' defer' : '';
+        $defer = $useDefer ? ' defer="defer"' : '';
 
         return "<script src=\"{$src}\"{$defer}></script>";
     }
