@@ -4,11 +4,13 @@ namespace Alariva\Tidiochat;
 
 class AlarivaTidioChat
 {
-    public static function js()
+    public static function js($useDefer = true)
     {
         $src = self::src();
 
-        return "<script src=\"$src\"></script>";
+        $defer = $useDefer ? ' defer' : '';
+
+        return "<script src=\"{$src}\"{$defer}></script>";
     }
 
     public static function src()
